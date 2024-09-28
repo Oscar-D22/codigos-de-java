@@ -1,0 +1,65 @@
+//CREADO POR OSCAR DOMINGUEZ////
+package opermat;
+import java.io.*; 
+class metodos{
+
+    int sumar()
+    {
+    int suma1;
+    suma1= 7+9;
+    return(suma1);
+    }
+    
+ int restar(int x1,int suma1){
+    int restar1;
+     restar1= x1 - suma1;
+    return(restar1);
+    }
+float multiplicar(float A1,float B1, int restar1){
+    float multiplicar1;
+    multiplicar1 = A1 * B1 * restar1;
+    return(multiplicar1);
+    }
+float dividir(int suma1 ,int restar1,int multiplicar1 ,float A1 ,float B1){
+float dividir1 = (suma1 + restar1)/(A1 + B1);
+return(dividir1);
+}
+
+void Resultados(int suma1 , int restar1 , float multiplicar1,float dividir1) 
+   { 
+     System.out.println("****************************************"); 
+     System.out.println(" EL RESULTADO DE SU SUMA ES :" + suma1 ); 
+     System.out.println(" EL RESULTADO DE SU RESTA ES :" + restar1 ); 
+     System.out.println(" EL RESULTADO DE SU MULTIPLICACION ES :" + multiplicar1 ); 
+     System.out.println(" EL RESULTADO DE SU DIVISION ES DE :" + dividir1 ); 
+     System.out.println("****************************************"); 
+   } 
+}
+
+public class Opermat {
+    public static void main(String[] args) throws IOException {
+    int x, sumaM, restarM;
+    float A1 , B1 , multiplicarMM ,dividirMM=0;
+     
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+     metodos op = new metodos(); 
+     //solicitamos a los usuarios los datos
+     System.out.println("INGRESE SU DATO A RESTAR :  "); 
+     System.out.println("****************************************"); 
+     x = Integer.parseInt(br.readLine()); 
+     System.out.println("INGRESE SU PRIMER DATO A  MULTIPLICAR:  "); 
+     System.out.println("****************************************"); 
+     A1 = Float.parseFloat(br.readLine());
+     System.out.println("INGRESE SU SEGUNDO DATO A MULTIPLICAR:  "); 
+     System.out.println("****************************************"); 
+     B1 = Float.parseFloat(br.readLine());
+      //
+        sumaM = op.sumar();
+        restarM = op.restar(x, sumaM);
+        multiplicarMM = op.multiplicar(A1, B1, restarM);
+        dividirMM = op.dividir(sumaM, restarM, restarM, A1, B1);
+        //
+     op.Resultados(sumaM, restarM, multiplicarMM, dividirMM);
+
+    }
+}
